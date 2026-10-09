@@ -1,0 +1,6 @@
+agent.name,criticidade,exposicao,ambiente
+srv-web-01,alta,internet,producao
+srv-db-01,critica,interna,producao
+hml-app-02,media,interna,homologacao
+dev-box-07,baixa,interna,desenvolvimento
+fw-edge,alta,internet,producao
