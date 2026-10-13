@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$marca | Relatório Técnico de Vulnerabilidades - $cliente</title>
+<style>
+$css
+</style>
+</head>
+<body>
+<div class="doc">
+
+<section class="capa">
+  <div>$logo_html</div>
+  <div class="capa-corpo">
+    <h1>Relatório Técnico<br>de Vulnerabilidades</h1>
+    <p class="capa-sub">Priorização de correções com Wazuh, EPSS e CISA KEV</p>
+    <p class="capa-cliente">$cliente</p>
+  </div>
+  <dl class="capa-meta">
+    <dt>Emitido em</dt><dd>$gerado_em</dd>
+    <dt>Documento</dt><dd>$doc_id</dd>
+    <dt>Fonte dos dados</dt><dd>$entrada</dd>
+    <dt>Execução anterior</dt><dd>$anterior</dd>
+  </dl>
+  <p class="capa-conf"><b>Confidencial.</b> Este relatório descreve fragilidades do ambiente. Restrinja o acesso e revise antes de compartilhar fora da organização.</p>
+</section>
+
+<section class="secao quebra" id="escopo">
+  <h2>1. Escopo e metodologia</h2>
+  $escopo
+  <h3>Como cada vulnerabilidade é priorizada</h3>
+  $regras
+  <h3>Índice de postura de segurança</h3>
+  $metodo_indice
+</section>
+
+<section class="secao quebra" id="sumario">
+  <h2>2. Sumário executivo</h2>
+  $postura
+  <div class="narrativa">$narrativa</div>
+  $kpis
+  <h3>Distribuição por faixa de prioridade</h3>
+  <div class="dist">
+    <div class="donut">$donut</div>
+    <div class="tabela-dist">$tab_faixas</div>
+  </div>
+  <h3>Principais conclusões</h3>
+  $conclusoes
+</section>
+
+<section class="secao quebra" id="matriz">
+  <h2>3. Matriz de risco</h2>
+  <p class="intro">Cruza a severidade técnica (CVSS) com o sinal de exploração conhecido. Células mais quentes concentram os achados com maior chance de exploração real e devem ser tratadas primeiro. Cada número é uma vulnerabilidade única.</p>
+  $matriz
+  <p class="nota">Exploração provável: EPSS de 10% ou mais, fora do CISA KEV. O EPSS estima a chance de exploração nos próximos 30 dias.</p>
+</section>
+
+<section class="secao" id="remediacao">
+  <h2>4. Plano de remediação</h2>
+  <p class="intro">Os achados em aberto foram organizados em ondas de execução, da maior para a menor urgência. A ordem considera a ameaça real e o contexto do ativo, e não apenas a nota CVSS.</p>
+  $tab_ondas
+  $ondas_detalhe
+</section>
+
+<section class="secao quebra" id="evolucao">
+  <h2>5. Evolução entre execuções</h2>
+  $tendencia
+</section>
+
+<section class="secao" id="ativos">
+  <h2>6. Ativos com maior exposição</h2>
+  <p class="intro">CVEs únicos por ativo, ordenados pela prioridade. Um mesmo CVE em ativos diferentes conta uma vez em cada um.</p>
+  $tab_ativos
+</section>
+
+<section class="secao quebra" id="vulns">
+  <h2>7. Principais vulnerabilidades</h2>
+  <p class="intro">Ordenadas pela faixa de prioridade e, dentro dela, pelo risco combinado de CVSS e EPSS.</p>
+  $tab_vulns
+</section>
+
+<section class="secao" id="qualidade">
+  <h2>8. Qualidade dos dados e limitações</h2>
+  $avisos
+  <h3>Limitações</h3>
+  $limitacoes
+</section>
+
+</div>
+</body>
+</html>

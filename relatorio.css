@@ -1,0 +1,135 @@
+:root{
+  --acento:#f5a000; --tinta:#1f2328; --apoio:#5c6370; --linha:#d8dbe0; --cab:#33363b;
+  --tela:#e9eaec; --suave:#f3f4f6;
+  --p0:#b91c1c; --p1:#e8590c; --p2:#c98a00; --p3:#0284c7; --info:#6b7280;
+}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;background:var(--tela);color:var(--tinta);
+  font:10.5pt/1.5 "Segoe UI Variable","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  font-variant-numeric:tabular-nums}
+.doc{width:210mm;max-width:100%;margin:16px auto;background:#fff;padding:0 16mm 16mm;
+  box-shadow:0 1px 8px rgba(0,0,0,.18)}
+a{color:inherit}
+a:focus-visible{outline:3px solid #0b5cab;outline-offset:2px}
+
+/* capa */
+.capa{min-height:262mm;display:flex;flex-direction:column;padding-top:16mm;
+  border-top:8px solid var(--acento);margin:0 -16mm;padding-left:16mm;padding-right:16mm}
+.logo{max-height:46px;max-width:220px}
+.marca{font-size:22pt;font-weight:700;color:var(--cab)}
+.capa-corpo{margin:58mm 0 0}
+.capa h1{margin:0;font-size:34pt;line-height:1.1;font-weight:600}
+.capa-sub{margin:14px 0 0;font-size:13pt;color:var(--apoio)}
+.capa-cliente{margin:34px 0 0;font-size:16pt;font-weight:600;padding-left:12px;border-left:5px solid var(--acento)}
+.capa-meta{margin:auto 0 0;display:grid;grid-template-columns:max-content 1fr;gap:5px 24px;font-size:10pt}
+.capa-meta dt{color:var(--apoio)} .capa-meta dd{margin:0;overflow-wrap:anywhere}
+.capa-conf{margin:22px 0 0;padding-top:10px;border-top:1px solid var(--linha);font-size:9pt;color:var(--apoio)}
+.capa-conf b{color:var(--p0)}
+
+/* seções */
+.secao{padding-top:12mm}
+.quebra{break-before:page}
+h2{margin:0 0 14px;font-size:18pt;line-height:1.2;font-weight:600;break-after:avoid}
+h2::after{content:"";display:block;width:56px;height:3px;background:var(--acento);margin-top:7px}
+h3{margin:14px 0 6px;font-size:12pt;font-weight:600;break-after:avoid}
+p{margin:0 0 9px}
+.intro{color:var(--apoio);break-after:avoid}
+.nota{font-size:9pt;color:var(--apoio);margin:6px 0 0}
+.vazio{padding:10px 14px;background:var(--suave);border-left:4px solid var(--acento);margin:0 0 9px}
+ul.lista{margin:0 0 9px;padding-left:20px} ul.lista li{margin:0 0 3px}
+.bloco{break-inside:avoid}
+
+/* sumário */
+.postura{display:flex;align-items:center;gap:20px;border:1px solid var(--linha);padding:8px 16px;margin:0 0 10px}
+.gauge{flex:0 0 225px} .gauge svg{width:100%;height:auto;display:block}
+.postura-txt{flex:1}
+.postura-rot{font-size:8.5pt;color:var(--apoio)}
+.nota-letra{display:flex;align-items:baseline;gap:10px;margin:2px 0 4px}
+.nota-letra b{font-size:32pt;line-height:1}
+.nota-letra span{font-size:15pt;font-weight:600}
+.postura-txt p{font-size:9pt;color:var(--apoio);margin:6px 0 0}
+.narrativa{background:var(--suave);border-left:4px solid var(--acento);padding:8px 14px;margin:0 0 10px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--linha);border-right:0;border-bottom:0;margin:0 0 10px}
+.kpi{border-top:3px solid var(--k,var(--cab));border-right:1px solid var(--linha);border-bottom:1px solid var(--linha);padding:7px 11px}
+.kpi b{display:block;font-size:17pt;line-height:1.2;font-weight:700}
+.kpi span{font-size:8.5pt;color:var(--apoio)}
+.k-red{--k:var(--p0)} .k-ora{--k:var(--p1)} .k-azul{--k:var(--p3)} .k-verde{--k:#2e7d32}
+.dist{display:flex;gap:20px;align-items:center;margin:4px 0 8px}
+.dist .donut{flex:0 0 140px} .donut svg{width:100%;height:auto;display:block}
+.dist .tabela-dist{flex:1}
+
+/* selos */
+.selo{display:inline-block;min-width:64px;padding:2px 8px;text-align:center;color:#fff;font-size:7.5pt;
+  font-weight:700;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
+.p0,.s-crit{background:var(--p0)} .p1,.s-alta{background:var(--p1)}
+.p2,.s-med{background:var(--p2)} .p3,.s-baixa{background:var(--p3)} .s-info{background:var(--info)}
+.selo.p0,.selo.p1,.selo.p2,.selo.p3{min-width:34px}
+
+/* tabelas */
+.rolagem{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:8.8pt}
+th{background:var(--cab);color:#fff;text-align:left;font-weight:600;padding:7px 9px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--linha);vertical-align:top}
+tr{break-inside:avoid}
+thead{display:table-header-group}
+th.n,td.n{text-align:right}
+td.cve a{font-weight:600;text-decoration:none}
+td.cve{min-width:150px}
+.desc{display:block;font-size:8pt;color:var(--apoio);font-weight:400}
+td.motivo{min-width:200px}
+.zero{color:#9aa0a6}
+.dist table td{padding:6px 9px}
+
+/* matriz */
+.matriz th.col{text-align:center;white-space:normal}
+.matriz td{text-align:center;font-weight:700;font-size:11pt;border:2px solid #fff;background:var(--suave)}
+.matriz th[scope=row]{background:#fff;border-bottom:2px solid #fff;padding:4px 6px}
+.matriz .m-k:not(.m-0){background:#f9d3d3} .matriz .m-e:not(.m-0){background:#fbe7a6}
+.matriz .m-n:not(.m-0){background:#d9eaf6} .matriz .m-0{color:#9aa0a6}
+
+/* ondas */
+.onda-tag{display:inline-block;width:5px;height:100%}
+.ondas td:first-child{border-left:5px solid var(--cor,var(--linha));font-weight:600}
+.ondas tr.o-p0{--cor:var(--p0)} .ondas tr.o-p1{--cor:var(--p1)}
+.ondas tr.o-p2{--cor:var(--p2)} .ondas tr.o-p3{--cor:var(--p3)}
+
+/* gráfico */
+.grafico svg{display:block;width:100%;max-width:100%;height:auto;border:1px solid var(--linha)}
+.grafico .s0{fill:var(--p0)} .grafico .s1{fill:var(--p1)} .grafico .s2{fill:var(--p2)}
+.grafico text{font:11px "Segoe UI",system-ui,sans-serif;fill:var(--tinta)}
+.mini{display:flex;gap:16px;list-style:none;padding:0;margin:8px 0 12px;font-size:8.5pt;color:var(--apoio);align-items:center}
+
+@media (max-width:760px){
+  .doc{padding:0 14px 14px} .capa{margin:0 -14px;padding-left:14px;padding-right:14px;min-height:0}
+  .capa h1{font-size:26pt} .capa-corpo{margin-top:30px}
+  .postura,.dist{flex-direction:column;align-items:stretch}
+  .gauge,.dist .donut{flex:none;max-width:260px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+}
+
+/* impressão e PDF */
+@page{
+  size:A4; margin:22mm 14mm 20mm;
+  @top-left{content:"$marca_css   Relatório Técnico de Vulnerabilidades - $cliente_css";
+    font:8pt "Segoe UI",Arial,sans-serif;color:#5c6370;vertical-align:bottom;padding-bottom:3mm}
+  @top-right{content:"CONFIDENCIAL";font:700 8pt "Segoe UI",Arial,sans-serif;color:#b91c1c;
+    vertical-align:bottom;padding-bottom:3mm}
+  @bottom-left{content:"$marca_css";font:700 8pt "Segoe UI",Arial,sans-serif;color:#33363b}
+  @bottom-center{content:"Doc. $doc_id_css";font:8pt "Segoe UI",Arial,sans-serif;color:#5c6370}
+  @bottom-right{content:"Página " counter(page) " de " counter(pages);
+    font:8pt "Segoe UI",Arial,sans-serif;color:#5c6370}
+}
+@page :first{
+  margin:0;
+  @top-left{content:none} @top-right{content:none} @bottom-left{content:none}
+  @bottom-center{content:none} @bottom-right{content:none}
+}
+@media print{
+  body{background:#fff;font-size:10pt}
+  .doc{width:auto;margin:0;padding:0;box-shadow:none}
+  .capa{margin:0;padding:16mm 16mm 14mm;min-height:297mm;break-after:page}
+  .secao{padding-top:9mm}
+  .secao.quebra{padding-top:0}
+  .rolagem{overflow:visible}
+}
